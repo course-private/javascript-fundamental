@@ -4,18 +4,18 @@
 
 // Volume Kubus
 
-let s = 5;
-let volume = 5 ** 3;
+// let s = 5;
+// let volume = 5 ** 3;
 
-console.log("The volume of the cube is: " + volume);
+// console.log("The volume of the cube is: " + volume);
 
 // Luas Lingkaran
 
-let r = 7;
-const phi = 3.14;
-let luasLingkaran = phi * r * r;
+// let r = 7;
+// const phi = 3.14;
+// let luasLingkaran = phi * r * r;
 
-console.log("The area of the circle is: " + luasLingkaran);
+// console.log("The area of the circle is: " + luasLingkaran);
 
 /**
  * Assignment 1
