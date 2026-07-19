@@ -104,4 +104,74 @@
 
    - Total ≥ Rp250.000 → Diskon 15%
    - Total < Rp250.000 → Tidak mendapat diskon
+
+
+   BEGIN
+   STORE kodePromo
+   STORE totalBelanja
+   STORE diskon
+   STORE totalBayar
+
+      SET diskon = 0
+
+      IF kodePromo EQUAL "Discount10%" THEN
+
+         IF totalBelanja >= 500000 THEN
+            SET diskon = totalBelanja * 10 / 100
+
+         ELSE IF totalBelanja >= 300000 THEN
+            SET diskon = totalBelanja * 5 / 100
+
+         ELSE
+            SET diskon = totalBelanja * 2.5 / 100
+         ENDIF
+
+      ELSE IF kodePromo EQUAL "DiscountHarbolnas" THEN
+
+         IF totalBelanja >= 250000 THEN
+            SET diskon = totalBelanja * 15 / 100
+         ELSE
+            SET diskon = 0
+         ENDIF
+
+      ELSE
+         DISPLAY "Kode promo tidak valid"
+      ENDIF
+
+      SET totalBayar = totalBelanja - diskon
+
+      DISPLAY "Total Belanja : ", totalBelanja
+      DISPLAY "Diskon : ", diskon
+      DISPLAY "Total Bayar : ", totalBayar
+   END
  */
+
+let kodePromo = "Discount10%";
+let totalBelanja = 600000;
+
+let diskon = 0;
+let totalBayar = 0;
+
+if (kodePromo === "Discount10%") {
+  if (totalBelanja >= 500000) {
+    diskon = totalBelanja * 0.1;
+  } else if (totalBelanja >= 300000) {
+    diskon = totalBelanja * 0.05;
+  } else {
+    diskon = totalBelanja * 0.025;
+  }
+} else if (kodePromo === "DiscountHarbolnas") {
+  if (totalBelanja >= 250000) {
+    diskon = totalBelanja * 0.15;
+  } else {
+    diskon = 0;
+  }
+} else {
+  console.log("Kode promo tidak valid");
+}
+
+totalBayar = totalBelanja - diskon;
+
+console.log("Total Belanja :", totalBelanja);
+console.log("Diskon :", diskon);
+console.log("Total Bayar :", totalBayar);
